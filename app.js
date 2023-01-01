@@ -1,17 +1,18 @@
 const choice = 16;
 
-let columns = choice;
-let rows = choice;
-
 const grid = document.getElementById('grid-body');
 
-for (let i = 0; i < columns; i++) {
-    let column = document.createElement('div');
-    column.className = 'column';
-    for (let r = 0; r < rows; r++) {
-        let row = document.createElement('div');
-        row.className = 'row';
-        column.appendChild(row);
+function setUpGrid(size){
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < size*size; i++) {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('newDiv');
+        grid.appendChild(newDiv);
     };
-    grid.appendChild(column);
+};
+
+window.onload = () => {
+    setUpGrid(16)
 };

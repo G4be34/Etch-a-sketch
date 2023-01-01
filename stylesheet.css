@@ -47,6 +47,7 @@ footer {
     justify-content: space-between;
     width: 90%;
     margin-bottom: 25px;
+    margin-top: 20px;
     align-items: center;
     
 }
@@ -72,20 +73,13 @@ button {
 }
 
 #grid-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 650px;
-    width: 650px;
+    display: grid;
+    height: 700px;
+    width: 700px;
+    border: 1px solid black;
+    
 }
 
-.column {
-    flex: 0;
-}
-
-.row {
-    height: 10px;
-    width: 10px;
-    background: gold;
+.newDiv {
     border: 1px solid black;
 }
