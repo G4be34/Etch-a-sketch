@@ -1,4 +1,15 @@
-const choice = 16;
+const defaultSize = 16
+const defaultMode = 'color'
+const defaultColor = '#333333'
+
+const smallBtn = document.getElementById('small-button');
+const mediumBtn = document.getElementById('medium-button');
+const largeBtn = document.getElementById('large-button');
+const classBtn = document.getElementById('class-button');
+const modernBtn = document.getElementById('modern-button');
+const rainbowBtn = document.getElementById('rainbow-button');
+const eraseBtn = document.getElementById('erase-button');
+const clearBtn = document.getElementById('clear-button');
 
 const grid = document.getElementById('grid-body');
 
@@ -13,6 +24,54 @@ function setUpGrid(size){
     };
 };
 
-window.onload = () => {
-    setUpGrid(16)
+// window.onload = () => {
+//     setUpGrid(16)
+// };
+
+function changeSize () {
+
 };
+
+function changeColor () {
+
+};
+
+function clearBoard () {
+
+};
+
+function eraseColor () {
+
+};
+
+classBtn.addEventListener('click', function() {
+    changeColor(defaultColor);
+});
+
+modernBtn.addEventListener('click', function() {
+    changeColor('modern'); //use #777777
+});
+
+rainbowBtn.addEventListener('click', function() {
+    changeColor('rainbow');
+});
+
+smallBtn.addEventListener('click', function() {
+    changeSize(defaultSize);
+});
+
+mediumBtn.addEventListener('click', function() {
+    changeSize('medium');
+});
+
+largeBtn.addEventListener('click', function() {
+    changeSize('large');
+});
+
+eraseBtn.addEventListener('click', function() {
+    eraseColor();
+});
+
+clearBtn.addEventListener('click', function() {
+    clearBoard();
+});

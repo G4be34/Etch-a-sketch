@@ -77,9 +77,8 @@ button {
     height: 700px;
     width: 700px;
     border: 1px solid black;
-    
+    border-radius: 10px;
+    background-color: white;
 }
 
-.newDiv {
-    border: 1px solid black;
-}
+
