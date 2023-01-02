@@ -28,16 +28,27 @@ function setUpGrid(size){
 //     setUpGrid(16)
 // };
 
-function changeSize () {
-
+function changeSize (size) {
+    if (size === defaultSize) {
+        setUpGrid(defaultSize)
+    } else if (size === 'medium') {
+        setUpGrid(32);
+    } else if (size === 'large') {
+        setUpGrid(64)
+    };
 };
 
-function changeColor () {
+function changeColor (color) {
+    if (color === defaultColor) {
 
+    }
 };
 
 function clearBoard () {
-
+    const divs = document.querySelectorAll('.newDiv');
+    divs.forEach(div => {
+        div.remove();
+    });
 };
 
 function eraseColor () {
@@ -49,7 +60,7 @@ classBtn.addEventListener('click', function() {
 });
 
 modernBtn.addEventListener('click', function() {
-    changeColor('modern'); //use #777777
+    changeColor('modern'); 
 });
 
 rainbowBtn.addEventListener('click', function() {
