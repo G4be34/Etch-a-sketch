@@ -68,14 +68,17 @@ rainbowBtn.addEventListener('click', function() {
 });
 
 smallBtn.addEventListener('click', function() {
+    clearBoard();
     changeSize(defaultSize);
 });
 
 mediumBtn.addEventListener('click', function() {
+    clearBoard();
     changeSize('medium');
 });
 
 largeBtn.addEventListener('click', function() {
+    clearBoard();
     changeSize('large');
 });
 
