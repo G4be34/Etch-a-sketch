@@ -1,6 +1,9 @@
-const defaultSize = 16
-const defaultMode = 'color'
-const defaultColor = '#333333'
+const defaultSize = 16;
+const defaultMode = 'color';
+const defaultColor = '#333333';
+
+let currentSize = defaultSize;
+let currentColor = defaultColor;
 
 const smallBtn = document.getElementById('small-button');
 const mediumBtn = document.getElementById('medium-button');
@@ -21,27 +24,41 @@ function setUpGrid(size){
         const newDiv = document.createElement('div');
         newDiv.classList.add('newDiv');
         grid.appendChild(newDiv);
+        newDiv.addEventListener("mouseover", function() {
+            newDiv.style.backgroundColor = currentColor;
+        });
     };
 };
 
-// window.onload = () => {
-//     setUpGrid(16)
-// };
+window.onload = () => {
+    setUpGrid(defaultSize)
+};
 
 function changeSize (size) {
     if (size === defaultSize) {
         setUpGrid(defaultSize)
     } else if (size === 'medium') {
+        currentSize = 32;
         setUpGrid(32);
     } else if (size === 'large') {
+        currentSize = 64;
         setUpGrid(64)
     };
 };
 
 function changeColor (color) {
     if (color === defaultColor) {
-
-    }
+        currentColor = "#333333";
+    } else if (color === "modern") {
+        currentColor = "#777777";
+    } else if (color === "rainbow") {
+        let r = Math.floor(Math.random()*256);
+        let g = Math.floor(Math.random()*256);
+        let b = Math.floor(Math.random()*256);
+        currentColor = `#${r}${g}${b}`;
+        //investigate value of result to get random rgb
+        console.log(currentColor);
+    };
 };
 
 function clearBoard () {
@@ -88,4 +105,10 @@ eraseBtn.addEventListener('click', function() {
 
 clearBtn.addEventListener('click', function() {
     clearBoard();
+    setUpGrid(currentSize);
+    div.style.backgroundColor = "white";
 });
+
+
+
+
