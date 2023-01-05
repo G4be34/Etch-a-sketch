@@ -52,13 +52,18 @@ function changeColor (color) {
     } else if (color === "modern") {
         currentColor = "#777777";
     } else if (color === "rainbow") {
-        let r = Math.floor(Math.random()*256);
-        let g = Math.floor(Math.random()*256);
-        let b = Math.floor(Math.random()*256);
-        currentColor = `#${r}${g}${b}`;
-        //investigate value of result to get random rgb
-        console.log(currentColor);
-    };
+        const divs = document.querySelectorAll('.newDiv')
+        divs.forEach(div => {
+            div.addEventListener('mouseover', function() {
+                let values = "0123456789ABCDEF".split("");
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                 color += values[Math.round(Math.random() * 15)];
+            };
+        currentColor = color;
+        });
+    });
+};
 };
 
 function clearBoard () {
