@@ -49,6 +49,8 @@ function changeSize (size) {
 function changeColor (color) {
     if (color === defaultColor) {
         currentColor = "#333333";
+    } else if (color === 'erase') {
+        currentColor = "#ffffff"
     } else if (color === "modern") {
         currentColor = "#777777";
     } else if (color === "rainbow") {
@@ -74,7 +76,12 @@ function clearBoard () {
 };
 
 function eraseColor () {
-
+    const divs = document.querySelectorAll('.newDiv');
+    divs.forEach(div => {
+        div.addEventListener("mouseover", function() {
+            changeColor('erase');
+        });
+    });
 };
 
 classBtn.addEventListener('click', function() {
@@ -111,7 +118,6 @@ eraseBtn.addEventListener('click', function() {
 clearBtn.addEventListener('click', function() {
     clearBoard();
     setUpGrid(currentSize);
-    div.style.backgroundColor = "white";
 });
 
 
