@@ -57,13 +57,20 @@ button {
     border: none;
     height: 30px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
-.size-container {
+button:hover {background-color: #e6e6e6;}
+
+button:active {
+    background-color: #bfbfbf;
+    transform: translateY(3px);
+}
+
+#size-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .color-container {
