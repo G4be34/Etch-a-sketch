@@ -25,7 +25,16 @@ function setUpGrid(size){
         newDiv.classList.add('newDiv');
         grid.appendChild(newDiv);
         newDiv.addEventListener("mouseover", function() {
-            newDiv.style.backgroundColor = currentColor;
+            if (currentColor === "#333333" || currentColor === "#ffffff" || currentColor === "#777777") {
+                newDiv.style.backgroundColor = currentColor;
+            } else {
+                let values = "0123456789ABCDEF".split("");
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += values[Math.round(Math.random() * 15)];
+                };
+                newDiv.style.backgroundColor = color;
+            };
         });
     };
 };
@@ -60,12 +69,12 @@ function changeColor (color) {
                 let values = "0123456789ABCDEF".split("");
                 let color = "#";
                 for (let i = 0; i < 6; i++) {
-                 color += values[Math.round(Math.random() * 15)];
-            };
-        currentColor = color;
-        });
-    });
-};
+                    color += values[Math.round(Math.random() * 15)];
+                };
+                currentColor = color;
+            });
+         });
+    };
 };
 
 function clearBoard () {
@@ -73,6 +82,7 @@ function clearBoard () {
     divs.forEach(div => {
         div.remove();
     });
+
 };
 
 function eraseColor () {
