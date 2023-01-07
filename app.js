@@ -63,17 +63,7 @@ function changeColor (color) {
     } else if (color === "modern") {
         currentColor = "#777777";
     } else if (color === "rainbow") {
-        const divs = document.querySelectorAll('.newDiv')
-        divs.forEach(div => {
-            div.addEventListener('mouseover', function() {
-                let values = "0123456789ABCDEF".split("");
-                let color = "#";
-                for (let i = 0; i < 6; i++) {
-                    color += values[Math.round(Math.random() * 15)];
-                };
-                currentColor = color;
-            });
-         });
+        currentColor = "";
     };
 };
 
